@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FFC0CB">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Happy Birthday Darakhshan! 💕</title>
+    <link rel="stylesheet" href="darakhshan-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Background Decorations -->
+    <div class="background-decorations" id="bgDecorations">
+        <!-- Hearts and stars will be added by JS -->
+    </div>
+
+    <!-- Screen 1: Countdown Page -->
+    <section class="screen countdown-screen active" id="screen1">
+        <div class="screen-content">
+            <div class="floating-balloons corner-top-left">
+                <span class="balloon">🎈</span>
+                <span class="balloon">💕</span>
+                <span class="balloon">⭐</span>
+            </div>
+            <div class="floating-balloons corner-top-right">
+                <span class="balloon">🎈</span>
+                <span class="balloon">💗</span>
+                <span class="balloon">✨</span>
+            </div>
+            
+            <h1 class="main-title handwritten">
+                Counting down to Darakhshan's special day 🎂
+            </h1>
+            <p class="subtitle cursive">
+                making every moment to meet that person as ever again 💕
+            </p>
+            
+            <div class="countdown-container">
+                <div class="flip-clock">
+                    <div class="flip-unit">
+                        <div class="flip-card" id="hoursTop">
+                            <span class="flip-digit" id="hours">00</span>
+                        </div>
+                        <span class="flip-label">Hours</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="flip-unit">
+                        <div class="flip-card" id="minutesTop">
+                            <span class="flip-digit" id="minutes">00</span>
+                        </div>
+                        <span class="flip-label">Minutes</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="flip-unit">
+                        <div class="flip-card" id="secondsTop">
+                            <span class="flip-digit" id="seconds">00</span>
+                        </div>
+                        <span class="flip-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="midnight-text cursive">
+                ✨ A special celebration awaits you at midnight ✨
+            </p>
+            
+            <button class="celebrate-btn pill-btn" id="countdownCelebrateBtn">
+                Let's Celebrate 🎉
+            </button>
+        </div>
+    </section>
+
+    <!-- Screen 2: Birthday Reveal Page -->
+    <section class="screen reveal-screen" id="screen2">
+        <div class="screen-content">
+            <div class="floating-balloons corner-top-left">
+                <span class="balloon">🎈</span>
+                <span class="balloon">💕</span>
+                <span class="balloon">🎀</span>
+            </div>
+            <div class="floating-balloons corner-top-right">
+                <span class="balloon">🎈</span>
+                <span class="balloon">💗</span>
+                <span class="balloon">✨</span>
+            </div>
+            <div class="floating-balloons corner-bottom-left">
+                <span class="balloon">🎈</span>
+                <span class="balloon">💖</span>
+            </div>
+            <div class="floating-balloons corner-bottom-right">
+                <span class="balloon">🎈</span>
+                <span class="balloon">💕</span>
+            </div>
+            
+            <h1 class="birthday-title handwritten">
+                Happy Birthday Darakhshan! 🎂
+            </h1>
+            <p class="birthday-subtitle cursive">
+                you mean more than words can ever explain 💗
+            </p>
+            <p class="its-your-birthday display-text">
+                It's Your Birthday! 🥂
+            </p>
+            
+            <div class="side-message">
+                <p class="ready-text cursive">
+                    Ready for your surprise? 💫
+                </p>
+                <p class="magical-text small-cursive">
+                    Something magical is about to unfold ✨
+                </p>
+            </div>
+            
+            <button class="celebrate-btn pill-btn" id="revealCelebrateBtn">
+                Let's Celebrate 🎉
+            </button>
+        </div>
+    </section>
+
+    <!-- Screen 3: Modal Popup -->
+    <section class="screen modal-screen" id="screen3">
+        <div class="modal-overlay">
+            <div class="modal-card">
+                <div class="star-decorations top-left">✨</div>
+                <div class="star-decorations top-right">⭐</div>
+                <div class="star-decorations bottom-left">✨</div>
+                <div class="star-decorations bottom-right">💫</div>
+                
+                <h2 class="modal-title handwritten">
+                    Do you wanna see what I made?? ✨
+                </h2>
+                
+                <div class="modal-buttons">
+                    <button class="pill-btn yes-btn" id="yesBtn">
+                        Yes 🎉
+                    </button>
+                    <button class="pill-btn no-btn" id="noBtn">
+                        No
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 4: Transition Screen -->
+    <section class="screen transition-screen" id="screen4">
+        <div class="modal-overlay">
+            <div class="modal-card transition-card">
+                <h2 class="modal-title handwritten">
+                    Have a look at it, Madam Jiii ✨
+                </h2>
+
+                <button class="celebrate-btn pill-btn" id="letsGoBtn">
+                    Let's Go! 🎉
+                </button>
+
+                <div class="dots-container">
+                    <span class="dot pink-dot"></span>
+                    <span class="dot pink-dot"></span>
+                    <span class="dot pink-dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Background Music -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/Khat.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Screen 5: Final Surprise Screen -->
+    <section class="screen surprise-screen" id="screen5">
+        <div class="dark-overlay" id="darkOverlay">
+            <button class="light-btn pill-btn" id="lightBtn">
+                Turn on the light 💡
+            </button>
+        </div>
+        
+        <div class="surprise-content" id="surpriseContent">
+            <!-- Room Decorations -->
+            <div class="room-decorations" id="roomDecorations">
+                <!-- Birthday Banner -->
+                <div class="birthday-banner" id="birthdayBanner">
+                    <div class="banner-string"></div>
+                    <div class="banner-flags">
+                        <span class="flag flag-pink">H</span>
+                        <span class="flag flag-white">A</span>
+                        <span class="flag flag-red">P</span>
+                        <span class="flag flag-pink">P</span>
+                        <span class="flag flag-white">Y</span>
+                        <span class="flag banner-spacer"></span>
+                        <span class="flag flag-red">B</span>
+                        <span class="flag flag-pink">I</span>
+                        <span class="flag flag-white">R</span>
+                        <span class="flag flag-red">T</span>
+                        <span class="flag flag-pink">H</span>
+                        <span class="flag flag-white">D</span>
+                        <span class="flag flag-red">A</span>
+                        <span class="flag flag-pink">Y</span>
+                    </div>
+                </div>
+                
+                <div class="streamer streamer-1"></div>
+                <div class="streamer streamer-2"></div>
+                <div class="streamer streamer-3"></div>
+                <div class="fairy-lights" id="fairyLights">
+                    <span class="light">🌟</span>
+                    <span class="light">⭐</span>
+                    <span class="light">✨</span>
+                    <span class="light">💫</span>
+                    <span class="light">🌟</span>
+                    <span class="light">⭐</span>
+                    <span class="light">✨</span>
+                    <span class="light">💫</span>
+                </div>
+            </div>
+            
+            <!-- Floating Balloons -->
+            <div class="floating-balloons-container" id="floatingBalloons">
+                <span class="floating-balloon pink">🎈</span>
+                <span class="floating-balloon red">🎈</span>
+                <span class="floating-balloon white">🎈</span>
+                <span class="floating-balloon pink">🎈</span>
+                <span class="floating-balloon red">🎈</span>
+                <span class="floating-balloon white">🎈</span>
+                <span class="floating-balloon pink">🎈</span>
+                <span class="floating-balloon red">🎈</span>
+            </div>
+            
+            <!-- Birthday Cake -->
+            <div class="cake-container" id="cakeContainer">
+                <div class="birthday-cake">
+                    <div class="cake-top">
+                        <div class="candle flame"></div>
+                        <div class="candle flame"></div>
+                        <div class="candle flame"></div>
+                    </div>
+                    <div class="cake-body">
+                        <div class="cake-layer top-layer"></div>
+                        <div class="cake-layer middle-layer"></div>
+                        <div class="cake-layer bottom-layer"></div>
+                    </div>
+                    <div class="cake-plate"></div>
+                </div>
+                <div class="cake-glow"></div>
+            </div>
+
+            <!-- Blow Candles Prompt Placeholder -->
+            <div class="blow-prompt-inline" id="blowPromptPlaceholder" style="visibility: hidden;"></div>
+
+            <h1 class="final-title handwritten" id="finalTitle">
+                Happy Birthday Darakhshan! 💕
+            </h1>
+
+            <!-- Envelope Popup -->
+            <div class="envelope-overlay" id="envelopeOverlay">
+                <div class="envelope-container" id="envelopeContainer">
+                    <div class="envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-pocket"></div>
+                        <div class="letter" id="letter">
+                            <div class="letter-content">
+                                <h2 class="letter-title handwritten">Dear Darakhshan parveen💕</h2>
+                                <div class="letter-body">
+                                    <p class="cursive">On this special day, as your birthday begins...</p>
+                                    <p class="cursive">I hope yesterday's Eid was full of joy for you,</p>
+                                    <p class="cursive">with a lot of biryani, yummy sheer khurma,</p>
+                                    <p class="cursive">and may you never find kishmish and ilaichi in your meals 😉</p>
+                                    <br>
+                                    <p class="cursive">On this Eid, may your outfit look beautiful, your mehndi stain dark, and your pictures turn out as beautiful as you are 🤍🌙</p>
+                                    <p class="cursive">laughter, sweet surprises, and everything that makes you smile. ✨</p>
+                                    <p class="cursive">You truly deserve the brightest celebration.</p>
+                                    <br>
+                                    <p class="cursive">I'm sincerely sorry for upsetting you the other day.</p>
+                                    <p class="cursive">When you asked why I asked that question, I didn't explain because I thought it would hurt you more,</p>
+                                    <p class="cursive">but refusing to answer just made things worse and hurt your feelings. That was my mistake no excuses.</p>
+                                    <p class="cursive">I'm genuinely sorry.</p>
+                                    <br>
+                                    <p class="cursive">If you can accept my apology, it would mean a lot to know there's no heaviness left</p>
+                                    <p class="cursive">so you can enjoy your birthday feeling completely happy and light.</p>
+                                    <br>
+                                    <p class="cursive letter-signature">Wishing you the best day ever, Afaq</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="click-hint cursive" id="clickHint">Click to open 💌</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="darakhshan-script.js"></script>
+</body>
+</html>
