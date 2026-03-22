@@ -651,9 +651,10 @@ body {
 .banner-flags {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
+    flex-wrap: nowrap;        /* was: wrap */
+    gap: 3px;                 /* was: 5px */
     margin-top: 5px;
+    overflow: hidden;
 }
 
 .flag {
@@ -1051,8 +1052,9 @@ body {
     opacity: 0;
     transform: translateY(30px);
     transition: all 1s ease;
-    /* Pushed well down — sits below blow-prompt area */
     margin-top: 20px;
+    width: 100%;              /* add this */
+    text-align: center;       /* add this */
 }
 
 .final-title.visible {
@@ -1502,13 +1504,13 @@ body {
     }
 
     .flag {
-        width: 35px;
-        height: 45px;
-        font-size: 1.4rem;
+    width: 20px;              /* was: 28px */
+    height: 28px;             /* was: 38px */
+    font-size: 0.75rem;       /* was: 1.1rem */
     }
 
     .banner-spacer {
-        width: 15px;
+    width: 6px;               /* was: 12px */
     }
 
     .fairy-lights {
