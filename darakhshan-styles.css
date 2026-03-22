@@ -596,10 +596,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* Start from top so items flow downward naturally below the banner */
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px;
-    overflow: hidden; /* prevent blow-prompt from causing scroll */
+    /* Top padding accounts for the banner height (~100px) + gap */
+    padding: 130px 20px 40px 20px;
+    overflow: hidden;
 }
 
 /* Room Decorations */
@@ -1047,11 +1049,10 @@ body {
     color: var(--pink-deep);
     text-shadow: 2px 2px 4px var(--shadow-soft);
     opacity: 0;
-    /* Animate downward into place instead of upward */
     transform: translateY(30px);
     transition: all 1s ease;
-    /* Increased margin to push title lower and fill empty space below */
-    margin-top: 180px;
+    /* Pushed well down — sits below blow-prompt area */
+    margin-top: 20px;
 }
 
 .final-title.visible {
@@ -1061,21 +1062,17 @@ body {
 
 /* ===== Blow Candles Prompt ===== */
 .blow-prompt-inline {
-    /* Absolutely positioned so it never shifts the cake or title */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    /* Sits just below the cake — adjusted top to move cake down */
-    top: calc(50% + 90px);
+    /* In normal flow so it sits right under the cake */
+    position: static;
     text-align: center;
-    width: max-content;
-    max-width: 90vw;
+    width: 100%;
+    margin: 16px auto 0 auto;
     pointer-events: none;
     z-index: 60;
 }
 
 .blow-prompt-text-inline {
-    font-size: 1.8rem;          /* increased from 1.4rem */
+    font-size: 1.4rem;          /* smaller than before (was 2rem) */
     color: var(--pink-deep);
     margin-bottom: 6px;
     text-shadow: 2px 2px 4px var(--shadow-soft);
@@ -1094,7 +1091,7 @@ body {
 }
 
 .blow-countdown-inline {
-    font-size: 4rem;            /* increased from 3rem */
+    font-size: 3rem;            /* smaller than before (was 5rem) */
     font-weight: 700;
     color: var(--pink-dark);
     font-family: 'Poppins', sans-serif;
@@ -1361,7 +1358,7 @@ body {
     }
 
     .blow-countdown-inline {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
     }
 }
 
@@ -1418,7 +1415,7 @@ body {
     }
 
     .blow-countdown-inline {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 }
 
