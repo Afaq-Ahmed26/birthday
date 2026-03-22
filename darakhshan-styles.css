@@ -1214,7 +1214,7 @@ body {
 .letter-content {
     padding: 50px;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;  /* change auto → hidden */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -1238,12 +1238,42 @@ body {
 }
 
 .letter-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--pink-deep);
     margin-bottom: 25px;
     text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
 }
 
+.letter-body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 2;
+    color: #444;
+    max-height: 60vh;    /* change 550px → 60vh */
+    overflow-y: auto;
+    letter-spacing: 0.01em;
+    -webkit-overflow-scrolling: touch;
+}
+
+.letter-body p {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.letter-signature {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--pink-dark);
+    margin-top: 20px;
+    font-style: normal;
+}
 .letter-body {
     font-size: 1.4rem;
     line-height: 2.2;
