@@ -1357,8 +1357,8 @@ body {
     }
 
     .letter.open {
-        width: 90vw;
-        height: 70vh;
+    width: 92vw;
+    height: 75vh;
     }
 
     .letter-content {
@@ -1370,8 +1370,11 @@ body {
     }
 
     .letter-body {
-        font-size: 1.1rem;
-        line-height: 1.8;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    max-height: 52vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     }
 
     .click-hint {
@@ -1777,8 +1780,8 @@ body {
     }
 
     .letter.open {
-        width: 340px;
-        height: 300px;
+    width: 92vw;
+    height: 75vh;
     }
 
     .letter-title {
